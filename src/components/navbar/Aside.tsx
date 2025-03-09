@@ -13,7 +13,7 @@ export default function Aside({ onClose, isOpen }: props) {
   return (
     <Drawer
       isOpen={isOpen}
-      placement='top'
+      placement='left'
       onClose={onClose}
       isFullHeight={true}
     >

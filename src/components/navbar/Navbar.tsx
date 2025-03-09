@@ -1,4 +1,4 @@
-import { Button, Flex, Spacer, useBreakpointValue, useColorMode, useDisclosure } from "@chakra-ui/react";
+import { Box, Button, Flex, Spacer, useBreakpointValue, useColorMode, useDisclosure } from "@chakra-ui/react";
 import { memo } from "react";
 import { FaRegMoon } from "react-icons/fa";
 import { MdOutlineWbSunny } from "react-icons/md";
@@ -17,7 +17,9 @@ const Navbar = memo(function Navbar() {
         <Flex alignItems="center" gap='4'>
             <Logo />
             <Spacer />
-            <SearchBar />
+            <Box display={{ base: "none", md: "block" }} width="100%">
+                <SearchBar />
+            </Box>
             <Spacer />
             <Button variant='ghost' onClick={toggleColorMode} size="sm">
                 {colorMode === "dark" ?
@@ -29,8 +31,8 @@ const Navbar = memo(function Navbar() {
                 variant='ghost'
                 size="sm"
                 onClick={onOpen}
-                display={{base: "flex", md: "none"}}
-                >
+                display={{ base: "flex", md: "none" }}
+            >
                 <FiMenu size={iconSize} />
                 <Aside
                     isOpen={isOpen}
