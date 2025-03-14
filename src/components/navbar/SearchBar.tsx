@@ -9,10 +9,10 @@ export default function SearchBar() {
     const ref = useRef<HTMLInputElement>(null)
 
     return (
-        <InputGroup display={{ base: "none", md: "flex" }}>
+        <InputGroup>
             <form onSubmit={(eve) => {
                 eve.preventDefault()
-                if(ref.current) {
+                if (ref.current) {
                     const searchContent: string = ref.current.value
                     onSearchGame(searchContent)
                 }
